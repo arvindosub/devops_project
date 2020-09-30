@@ -1,5 +1,3 @@
-/node_modules
-/build
 .git
-*.md
-.gitignore
+node_modules
+build

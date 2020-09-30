@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /home/user
-npm start
+node app.js

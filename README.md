@@ -1,4 +1,3 @@
-Currency Exchange API – NodeJS
-docker run -d -p 8080:8080 u1ih/nodejs-api
+# DevOps Assignment (CI/CD)
 
-curl -i http://localhost:8080/fx
+1. docker pull mysql/mysql-server:latest

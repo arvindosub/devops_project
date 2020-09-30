@@ -1,11 +1,5 @@
-FROM mysql:latest
-ENV MYSQL_ROOT_PASSWORD password
-ENV MYSQL_DATABASE users
-ADD users.sql /docker-entrypoint-initdb.d
-EXPOSE 3306
-
 FROM ubuntu:18.04
-EXPOSE 3306
+EXPOSE 8080
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Singapore
 

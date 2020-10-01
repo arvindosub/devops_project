@@ -13,4 +13,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: devops_project
-          file: ./Dockerfile
+          dockerfile: devops_project/Dockerfile

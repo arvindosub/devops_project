@@ -1,8 +1,8 @@
 name: Build-and-Publish to DockerHub
 
 on:
-  push:
-    branches: master
+  release:
+    types: [published]
 
 jobs:
   path-context:

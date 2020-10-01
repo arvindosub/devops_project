@@ -1,8 +1,18 @@
-FROM alpine
-MAINTAINER uli.hitzel@gmail.com
+FROM ubuntu:18.04
 EXPOSE 8080
-RUN apk update
-RUN apk add python2
-COPY start.sh /tmp/start.sh
-USER 1000
-CMD ["sh","/tmp/start.sh"]
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Singapore
+
+RUN apt-get update
+RUN apt-get install -y nodejs npm
+ENV USER root
+RUN npm install -g express-generator
+RUN npm install express --save
+RUN useradd -ms /bin/bash user
+COPY app.js /home/user/app.js
+COPY start.sh /home/user/start.sh
+RUN chmod a+x /home/user/start.sh
+USER root
+WORKDIR /home/user
+
+CMD ["sh","/home/user/start.sh"]

@@ -1,23 +1,24 @@
 # Currency Exchange API – NodeJS
 
 ## Workflows
+### (Refer to the 3 screenshots to view what to expect when workflows are triggered)
 
 (Triggered when Commit is Pushed)
 - Super-Linter Code Testing: To ensure that code that is changed does not break the overall project.
 - Telegram Notification: To notify team members of any changes made to the repository.
 
 (Triggered when Release is Published)
-- Package and Publish to Docker: Once a stable version of the code is produced, it can be packaged and uploaded to the cloud.
+- Package and Publish to Docker Hub: Once a stable version of the code is produced, it can be packaged and uploaded to the cloud.
 
 ## Instructions
 
-1. docker build -t myapp .
+1. docker build -t <username>/app:latest .
 
 2. docker login
 
-3. docker push myapp
+3. docker push <username>/app:latest
 
-4. docker run -d -p 8080:8080 myapp
+4. docker run -d -p 8080:8080 --name myapp <username>/app:latest
 
 5. Query the API
 - curl localhost:8080
